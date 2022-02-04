@@ -20,9 +20,3 @@ resource "google_sql_database_instance" "steampipe_postgres" {
   #change me later
   deletion_protection = false
 }
-
-# Service account that Steampipe will use to access Google APIs
-resource "google_service_account" "steampipe_svc_account" {
-  account_id   = var.var_steampipe_svc_account_name
-  display_name = "Service Account"
-}
