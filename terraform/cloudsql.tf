@@ -6,8 +6,7 @@ resource "google_sql_database_instance" "steampipe_postgres" {
   project           = var.var_gcp_project_id
 
   settings {
-    # Second-generation instance tiers are based on the machine
-    # type. See argument reference below.
+    # Second-generation instance tiers are based on the machine type.
     tier = "db-custom-1-3840"
   }
   
