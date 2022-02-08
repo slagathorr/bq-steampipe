@@ -6,3 +6,8 @@ resource "google_project_service" "cloudsql_api" {
   disable_dependent_services    = true
   disable_on_destroy            = true
 }
+
+resource "google_project_service" "run_api" {
+  service = "run.googleapis.com"
+  disable_on_destroy = true
+}
