@@ -1,5 +1,5 @@
 echo "\n---\nINFO: Setting variables.\n---"
-# The tag for the Steampipe Docker image.
+# The tag for the Steampipe Docker image. Also change this in your tfvars file if it's different.
 steampipe_image_version="0.12.2"
 # This assumes the default of us-central1. Change appropriately.
 gcp_region="us-central1"
