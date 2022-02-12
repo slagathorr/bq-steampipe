@@ -6,6 +6,7 @@ variable "var_gcp_project_id" {
 variable "var_gcp_region" {
     description = "Google Cloud region"
     type        = string
+    default     = "us-central1"
 }
 
 variable "var_steampipe_svc_account_name" {
