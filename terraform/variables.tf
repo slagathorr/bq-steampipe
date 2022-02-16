@@ -13,3 +13,9 @@ variable "var_steampipe_svc_account_name" {
     description = "Service account ID"
     type        = string
 }
+
+variable "var_steampipe_image_version" {
+    description = "Change this in your tfvars file so it matches what's in runall.sh"
+    type        = string
+    default     = "0.12.2"
+}
