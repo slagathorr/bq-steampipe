@@ -14,6 +14,7 @@ variable "var_steampipe_svc_account_name" {
     type        = string
 }
 
+# This is only used if you use the Docker image for Cloud Run.
 variable "var_steampipe_image_version" {
     description = "Change this in your tfvars file so it matches what's in runall.sh"
     type        = string
