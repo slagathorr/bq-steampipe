@@ -9,6 +9,12 @@ variable "var_gcp_region" {
     default     = "us-central1"
 }
 
+variable "var_gcp_zone" {
+    description = "Google Cloud zone"
+    type        = string
+    default     = "us-central1-a"
+}
+
 variable "var_steampipe_svc_account_name" {
     description = "Service account ID"
     type        = string
