@@ -9,11 +9,18 @@ variable "var_gcp_region" {
     default     = "us-central1"
 }
 
+variable "var_gcp_zone" {
+    description = "Google Cloud zone"
+    type        = string
+    default     = "us-central1-a"
+}
+
 variable "var_steampipe_svc_account_name" {
     description = "Service account ID"
     type        = string
 }
 
+# This is only used if you use the Docker image for Cloud Run.
 variable "var_steampipe_image_version" {
     description = "Change this in your tfvars file so it matches what's in runall.sh"
     type        = string
