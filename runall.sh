@@ -1,5 +1,6 @@
 echo "\n---\nINFO: Creating Packer image for GCE.\n---"
 cd packer
+# This assumes your variables file is variables.pkvars.hcl so change if not true.
 packer build -var-file=variables.pkrvars.hcl steampipe.pkr.hcl
 cd ..
 echo "done"

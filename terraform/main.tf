@@ -15,10 +15,6 @@ resource "google_compute_instance" "steampipe-server" {
 
   network_interface {
     network = "default"
-
-    access_config {
-      // Ephemeral public IP
-    }
   }
 
   metadata_startup_script = "su - steampipe -c 'steampipe service start'"
