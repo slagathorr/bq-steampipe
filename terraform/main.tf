@@ -21,7 +21,7 @@ resource "google_compute_instance" "steampipe-server" {
     }
   }
 
-  metadata_startup_script = file("./gce_startup.sh")
+  #metadata_startup_script = file("./gce_startup.sh")
 
   service_account {
     # Google recommends custom service accounts that have cloud-platform scope and permissions granted via IAM Roles.

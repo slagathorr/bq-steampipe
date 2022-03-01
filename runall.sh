@@ -1,6 +1,6 @@
 echo "\n---\nINFO: Setting variables.\n---"
 # The tag for the Steampipe Docker image. Also change this in your tfvars file if it's different.
-steampipe_image_version="0.12.2"
+steampipe_image_version="0.12.2" # This was used when pulling Docker images.
 # This assumes the default of us-central1. Change appropriately.
 gcp_region="us-central1"
 # This also assumes you have run gcloud init and set it to your main project.
@@ -26,6 +26,12 @@ echo "done"
 #docker push ${gcp_region}-docker.pkg.dev/${gcp_project}/steampipe-repo/steampipe:${steampipe_image_version}
 #echo "\n---\nINFO: Push it real good *cue salt-n-pepa dance*.\n---"
 # /end run stuff
+
+echo "\n---\nINFO: Creating Packer image for GCE.\n---"
+cd packer
+packer build -var-file=variables.pkrvars.hcl steampipe.pkr.hcl
+cd ..
+echo "done"
 
 echo "\n---\nINFO: Create if not exists main infrastructure.\n---"
 cd terraform
