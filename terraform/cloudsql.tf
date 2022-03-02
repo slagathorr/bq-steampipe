@@ -24,7 +24,7 @@ resource "google_sql_database_instance" "steampipe_postgres" {
     ip_configuration {
         allocated_ip_range  = "default-ip-range"
         ipv4_enabled        = true
-        private_network     = "projects/${var.var_gcp_project_id}/global/networks/default"
+        private_network     = "projects/${var.var_gcp_project_id}/global/networks/steampipe-network"
     }
   }
   
