@@ -18,6 +18,16 @@ resource "google_compute_subnetwork" "steampipe_subnet_us_central1" {
   stack_type                 = "IPV4_ONLY"
 }
 
+resource "google_compute_global_address" "steampipe_postgres_ip_range" {
+  address       = "10.196.128.0"
+  address_type  = "INTERNAL"
+  name          = "steampipe-postgres-ip-range"
+  network       = "https://www.googleapis.com/compute/v1/projects/sada-prj-carbon-analysis/global/networks/steampipe-network"
+  prefix_length = 20
+  project       = var.var_gcp_project_id
+  purpose       = "VPC_PEERING"
+}
+
 resource "google_compute_firewall" "default_allow_ssh_steampipe" {
   allow {
     ports    = ["22"]
