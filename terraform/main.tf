@@ -14,7 +14,8 @@ resource "google_compute_instance" "steampipe_server" {
   }
 
   network_interface {
-    network = "default"
+    network = google_compute_network.steampipe_network.name
+    subnetwork = google_compute_subnetwork.steampipe_subnet_us_central1.name
     #access_config {
     #  // Ephemeral public IP
     #}
@@ -28,5 +29,7 @@ resource "google_compute_instance" "steampipe_server" {
     scopes = ["cloud-platform"]
   }
 
-  tags = ["default-allow-https"]
+  #tags = ["default-allow-https"]
+
+  allow_stopping_for_update = true
 }
