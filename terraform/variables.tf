@@ -18,6 +18,7 @@ variable "var_gcp_zone" {
 variable "var_steampipe_svc_account_name" {
     description = "Service account ID"
     type        = string
+    default     = "sa-steampipe-access"
 }
 
 # This is only used if you use the Docker image for Cloud Run.
