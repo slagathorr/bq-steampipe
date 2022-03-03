@@ -17,12 +17,7 @@ resource "google_sql_database_instance" "steampipe_postgres" {
     disk_size   = 20
     disk_type   = "PD_HDD"
 
-    # This code assumes you are using the Google Cloud default network.
-    # Please see documentation on setting up and using a different network
-    # if you don't want to use the default network.
-    # https://registry.terraform.io/providers/hashicorp/google/latest/docs/resources/sql_database_instance
     ip_configuration {
-        allocated_ip_range  = "default-ip-range"
         ipv4_enabled        = true
         private_network     = "projects/${var.var_gcp_project_id}/global/networks/steampipe-network"
     }
@@ -30,4 +25,6 @@ resource "google_sql_database_instance" "steampipe_postgres" {
   
   #change me later
   deletion_protection = false
+
+  depends_on = [google_service_networking_connection.steampipe_service_networking]
 }
